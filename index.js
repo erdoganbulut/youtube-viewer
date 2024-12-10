@@ -24,6 +24,62 @@ const whitelistPath = './whitelist.json';
 const testUrl = 'https://httpbin.org/get';
 const screenshotsDir = './screenshots';
 
+const userDataDir = './user_data'; // Kullanıcı verilerinin kaydedileceği dizin
+
+async function clickOldestButton(page) {
+  const selector = 'iron-selector yt-chip-cloud-chip-renderer'; // Hedef öğe seçicisi
+  const targetText = 'Oldest'; // Aradığımız metin
+
+  try {
+    // Öğeleri al ve "Oldest" metnini içeren öğeyi seç
+    const buttonFound = await page.evaluate((selector, targetText) => {
+      const elements = Array.from(document.querySelectorAll(selector));
+      const targetElement = elements.find((element) => {
+        const rect = element.getBoundingClientRect();
+        const isVisible =
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+        return isVisible && element.textContent.trim() === targetText;
+      });
+      if (targetElement) {
+        targetElement.click(); // Öğeye tıklama
+        return true;
+      }
+      return false;
+    }, selector, targetText);
+
+    if (buttonFound) {
+      console.log(`Clicked on the "${targetText}" button.`);
+    } else {
+      console.log(`"${targetText}" button not found or not visible.`);
+    }
+  } catch (error) {
+    console.error('Error while clicking the "Oldest" button:', error.message);
+  }
+}
+
+
+async function isLoggedIn(page) {
+  try {
+    console.log('Checking if logged in to YouTube');
+    await page.goto('https://www.youtube.com', { waitUntil: 'networkidle2', timeout: 30000 });
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    const profileIconSelector = '#avatar-btn';
+    const isLoggedIn = await page.$(profileIconSelector) !== null; // Profil simgesi varsa giriş yapılmış
+    if (isLoggedIn) {
+      console.log('You are already logged in to YouTube.');
+      return true;
+    }
+    console.log('Not logged in to YouTube.');
+    return false;
+  } catch (error) {
+    console.error('Error during login check:', error.message);
+    return false;
+  }
+}
+
 async function loginToGoogle(page) {
   try {
     console.log('Navigating to Google login page');
@@ -139,6 +195,7 @@ async function main() {
     browser = await puppeteer.launch({
       headless: false,
       defaultViewport: null,
+      userDataDir, // Kullanıcı veri dizini
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -160,12 +217,19 @@ async function main() {
       fs.mkdirSync(proxyDir);
     }
 
-    await loginToGoogle(page);
+    const isLoggedInToYouTube = await isLoggedIn(page);
+    if (!isLoggedInToYouTube) {
+      console.log('Logging in to Google account...');
+      await loginToGoogle(page);
+    }
 
     console.log('Navigating to YouTube');
     await page.goto('https://www.youtube.com', { waitUntil: 'networkidle2', timeout: 100000 });
+    console.log('Waiting for YouTube to load1');
     await page.screenshot({ path: path.join(proxyDir, 'step1_youtube_home.png') });
+    console.log('Waiting for YouTube to load2');
     await new Promise(resolve => setTimeout(resolve, 10000));
+    console.log('Waiting for YouTube to load3');
 
     console.log('Searching for "Merter Zorlu"');
     const searchBar = await page.waitForSelector('.YtSearchboxComponentInput');
@@ -189,17 +253,30 @@ async function main() {
     console.log('Clicking on the Videos tab');
     const videosTab = await page.waitForSelector('yt-tab-group-shape yt-tab-shape[tab-title="Videos"]');
     await videosTab.click();
-    await new Promise(resolve => setTimeout(resolve, 100000));
+    await new Promise(resolve => setTimeout(resolve, 3000));
     await page.waitForSelector('iron-selector yt-chip-cloud-chip-renderer');
-    const oldestButton = await page.$$('#primary iron-selector yt-chip-cloud-chip-renderer');
-    console.log('oldestButton', oldestButton);
-    oldestButton[2].click();
-    await new Promise(resolve => setTimeout(resolve, 10000));
+    console.log('targetButton');
+    await clickOldestButton(page);
+    console.log('Waiting for YouTube to load4');
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    console.log('Waiting for YouTube to load5');
 
-    const firstVideo = await page.waitForSelector('ytd-rich-item-renderer #content ytd-thumbnail');
-    await firstVideo.click();
+    const firstVisibleVideos = await page.$$('ytd-thumbnail');
+    let firstVisibleVideo = null;
+    for (const element of firstVisibleVideos) {
+      const isVisible = await element.isVisible();
+      if (!firstVisibleVideo && isVisible) {
+        firstVisibleVideo = element;
+      }
+    }
+    console.log('firstVisibleVideo', firstVisibleVideo);
+    console.log('Waiting for YouTube to load6');
+    await firstVisibleVideo.click();
+    console.log('Waiting for YouTube to load7');
     await new Promise(resolve => setTimeout(resolve, 50000));
+    console.log('Waiting for YouTube to load8');
     await page.screenshot({ path: path.join(proxyDir, 'step4_video_page.png') });
+    console.log('Waiting for YouTube to load9');
 
     await browser.close();
   } catch (error) {
