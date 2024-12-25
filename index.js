@@ -24,7 +24,7 @@ const whitelistPath = './whitelist.json';
 const testUrl = 'https://httpbin.org/get';
 const screenshotsDir = './screenshots';
 
-const userDataDir = './user_data'; // Kullanıcı verilerinin kaydedileceği dizin
+const userDataDir = './user_data2'; // Kullanıcı verilerinin kaydedileceği dizin
 
 async function clickOldestButton(page) {
   const selector = 'iron-selector yt-chip-cloud-chip-renderer'; // Hedef öğe seçicisi
@@ -65,6 +65,8 @@ async function isLoggedIn(page) {
   try {
     console.log('Checking if logged in to YouTube');
     await page.goto('https://www.youtube.com', { waitUntil: 'networkidle2', timeout: 30000 });
+    await page.goto('https://accounts.google.com/signin', { waitUntil: 'networkidle2', timeout: 100000 });
+    await page.goto('https://www.youtube.com', { waitUntil: 'networkidle2', timeout: 30000 });
     await new Promise(resolve => setTimeout(resolve, 5000));
     const profileIconSelector = '#avatar-btn';
     const isLoggedIn = await page.$(profileIconSelector) !== null; // Profil simgesi varsa giriş yapılmış
@@ -88,14 +90,14 @@ async function loginToGoogle(page) {
     // Enter email/username
     const emailSelector = 'input[type="email"]';
     await page.waitForSelector(emailSelector);
-    await page.type(emailSelector, 'tongucbakioglu@gmail.com'); // Replace with your email
+    await page.type(emailSelector, 'dogumahir802@gmail.com'); // Replace with your email
     await page.click('#identifierNext');
     await new Promise(resolve => setTimeout(resolve, 5000));
 
     // Enter password
     const passwordSelector = 'input[type="password"]';
     await page.waitForSelector(passwordSelector);
-    await page.type(passwordSelector, 'Erdogan-1996'); // Replace with your password
+    await page.type(passwordSelector, 'Salih131928'); // Replace with your password
     await page.click('#passwordNext');
     await new Promise(resolve => setTimeout(resolve, 10000));
 
@@ -232,13 +234,14 @@ async function main() {
     console.log('Waiting for YouTube to load3');
 
     console.log('Searching for "Merter Zorlu"');
-    const searchBar = await page.waitForSelector('.YtSearchboxComponentInput');
+    const searchBar = await page.waitForSelector('.yt-searchbox-input');
     console.log('searchBar', searchBar);
-    // await searchBar.click();
+    await searchBar.click();
     await searchBar.type('Merter Zorlu');
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    await new Promise(resolve => setTimeout(resolve, 500000));
+    console.log ("basarili aratma tiklama kaldi")
     // const button = await page.waitForSelector('#search-icon-legacy');
-    const button = await page.waitForSelector('.YtSearchboxComponentSearchButton');
+    const button = await page.waitForSelector('.ytSearchboxComponentHost .ytSearchboxComponentSearchButton .yt-spec-icon-shape');
     console.log('button', button);
     await button.click();
     await new Promise(resolve => setTimeout(resolve, 5000));
