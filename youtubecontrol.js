@@ -2,28 +2,64 @@ import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import AdblockerPlugin from 'puppeteer-extra-plugin-adblocker';
 import dotenv from 'dotenv';
+import { readFile } from 'fs/promises';
 
 dotenv.config();
 
 puppeteer.use(StealthPlugin());
 puppeteer.use(AdblockerPlugin());
 
+const listPath = './list.json';
+let list;
+
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: false, // Tarayıcıyı görünür yapmak için false
-    userDataDir: './user_data12', // Kullanıcı verilerini saklamak için
+  try {
+    // JSON dosyasını okuma
+    list = JSON.parse(await readFile(listPath, 'utf-8'));
+    console.log(`Using list from ${listPath}`);
+  } catch (error) {
+    console.error(`Failed to read list from ${listPath} - ${error.message}`);
+    return;
+  }
+
+  // 25 proxy için paralel tarayıcıları başlatma
+  const browserPromises = list.slice(0, 25).map(async (proxy, index) => {
+    const browser = await puppeteer.launch({
+      headless: false, // Tarayıcıyı görünür yapmak için false
+      userDataDir: proxy.userDataDir, // Kullanıcı verilerini saklamak için
+      args: [
+        `--proxy-server=${proxy.protocol}://${proxy.ip}:${proxy.port}`
+      ],
+    });
+
+    const page = await browser.newPage();
+
+    if (proxy.username && proxy.password) {
+      await page.authenticate({ username: proxy.username, password: proxy.password });
+    }
+
+    try {
+      console.log(`Navigating to YouTube for Proxy ${index + 1}`);
+      await page.goto('https://www.youtube.com/watch?v=qyAUmzvEjuA&ab_channel=MerterZORLU', { waitUntil: 'networkidle2', timeout: 100000 });
+    } catch (error) {
+      console.error(`Error during execution for Proxy ${index + 1}:`, error.message);
+    }
+
+    return browser; // Tarayıcıyı döndürüyoruz, böylece tarayıcıyı kontrol edebiliriz
   });
 
-  const page = await browser.newPage();
+  // Tüm tarayıcıları başlat
+  const browsers = await Promise.all(browserPromises);
 
-  try {
-    console.log('Navigating to YouTube');
-    await page.goto('https://youtube.com/', { waitUntil: 'networkidle2', timeout: 100000 });
+  // 1 saat boyunca çalışacak bir zamanlayıcı ayarla (3600 saniye = 3.600.000 ms)
+  setTimeout(async () => {
+    console.log("1 hour has passed. Closing all browsers...");
+    
+    // Tarayıcıları kapat
+    for (const browser of browsers) {
+      await browser.close();
+    }
 
-
-  } catch (error) {
-    console.error('Error during execution:', error.message);
-  } finally {
-    // await browser.close(); // Tarayıcıyı her durumda kapat
-  }
+    console.log("All browsers have been closed.");
+  }, 3600000); // 1 saat
 })();

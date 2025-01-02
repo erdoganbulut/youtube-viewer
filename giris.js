@@ -14,7 +14,7 @@ puppeteer.use(
 );
 puppeteer.use(stealth);
 
-const userDataDir = './user_data7'; // Kullanıcı verilerinin kaydedileceği dizin
+const userDataDir = './user_data'; // Kullanıcı verilerinin kaydedileceği dizin
 
 // Giriş yapılıp yapılmadığını kontrol eden fonksiyon
 async function isLoggedIn(page) {
@@ -45,7 +45,7 @@ async function loginToGoogle(page) {
     // Email veya kullanıcı adı girme
     const emailSelector = 'input[type="email"]';
     await page.waitForSelector(emailSelector);
-    await page.type(emailSelector, 'canyildiz0289@gmail.com'); // Email adresinizi buraya girin
+    await page.type(emailSelector, 'salih282820@gmail.com'); // Email adresinizi buraya girin
     await page.click('#identifierNext');
     await new Promise(resolve => setTimeout(resolve, 5000));
 
@@ -84,7 +84,7 @@ async function loginToGoogle(page) {
   }
 
   // Tarayıcıyı kapatmadan önce bekleyin
-  await new Promise(resolve => setTimeout(resolve, 5000));
+  // await new Promise(resolve => setTimeout(resolve, 5000));
 
-  await browser.close();
+  // await browser.close();
 })();
