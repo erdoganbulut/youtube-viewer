@@ -1,0 +1,402 @@
+[
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10001",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data1"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10002",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data2"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10003",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data3"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10004",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data4"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10005",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data5"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10006",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data6"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10007",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data7"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10008",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data8"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10009",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data9"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10010",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data10"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10011",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data11"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10012",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data12"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10013",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data13"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10014",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data14"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10015",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data15"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10016",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data16"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10017",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data17"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10018",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data18"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10019",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data19"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10020",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data20"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10021",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data21"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10022",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data22"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10023",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data23"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10024",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data24"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10025",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data25"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10026",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data26"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10027",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data27"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10028",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data28"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10029",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data29"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10030",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data30"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10031",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data31"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10032",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data32"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10033",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data33"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10034",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data34"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10035",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data35"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10036",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data36"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10037",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data37"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10038",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data38"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10039",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data39"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10040",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data40"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10041",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data41"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10042",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data42"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10043",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data43"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10044",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data44"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10045",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data45"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10046",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data46"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10047",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data47"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10048",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data48"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10049",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data49"
+  },
+  {
+    "ip": "isp.smartproxy.com",
+    "port": "10050",
+    "username": "sp88e2g6xr",
+    "password": "dwrP8Aa+72izl5NlHb",
+    "protocol": "http",
+    "userDataDir": "./user_data50"
+  }
+]

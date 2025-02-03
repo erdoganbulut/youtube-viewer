@@ -18,7 +18,7 @@ puppeteer.use(
 puppeteer.use(stealth);
 
 const csvFilePath = './data.csv';
-const testUrl = 'https://kick.com/tongux';
+const testUrl = 'https://kick.com/reatsy';
 const screenshotsDir = './screenshots';
 
 async function readCSV(filePath) {

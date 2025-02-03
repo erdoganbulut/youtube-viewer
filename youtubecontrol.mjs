@@ -23,13 +23,15 @@ let list;
   }
 
   // 25 proxy için paralel tarayıcıları başlatma
-  const browserPromises = list.slice(0, 25).map(async (proxy, index) => {
+  const browserPromises = list.slice(25,50).map(async (proxy, index) => {
     const browser = await puppeteer.launch({
-      headless: false, // Tarayıcıyı görünür yapmak için false
+      headless: false,
       userDataDir: proxy.userDataDir, // Kullanıcı verilerini saklamak için
       args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
         `--proxy-server=${proxy.protocol}://${proxy.ip}:${proxy.port}`
-      ],
+    ]    
     });
 
     const page = await browser.newPage();
@@ -40,7 +42,7 @@ let list;
 
     try {
       console.log(`Navigating to YouTube for Proxy ${index + 1}`);
-      await page.goto('https://www.youtube.com/watch?v=qyAUmzvEjuA&ab_channel=MerterZORLU', { waitUntil: 'networkidle2', timeout: 100000 });
+      await page.goto('https://www.youtube.com/watch?v=3phA-xfidz0', { waitUntil: 'networkidle2', timeout: 100000 });
     } catch (error) {
       console.error(`Error during execution for Proxy ${index + 1}:`, error.message);
     }

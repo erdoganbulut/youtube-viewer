@@ -14,9 +14,8 @@ puppeteer.use(
 );
 puppeteer.use(stealth);
 
-const userDataDir = './user_data'; // Kullanıcı verilerinin kaydedileceği dizin
+const userDataDir = './user_data12/'; // Kullanıcı verilerinin kaydedileceği dizin
 
-// Giriş yapılıp yapılmadığını kontrol eden fonksiyon
 async function isLoggedIn(page) {
   try {
     console.log('Checking if logged in to YouTube');
@@ -45,14 +44,14 @@ async function loginToGoogle(page) {
     // Email veya kullanıcı adı girme
     const emailSelector = 'input[type="email"]';
     await page.waitForSelector(emailSelector);
-    await page.type(emailSelector, 'salih282820@gmail.com'); // Email adresinizi buraya girin
+    await page.type(emailSelector, 'sariyasin151@gmail.com'); // Email adresinizi buraya girin
     await page.click('#identifierNext');
     await new Promise(resolve => setTimeout(resolve, 5000));
 
     // Şifre girme
     const passwordSelector = 'input[type="password"]';
     await page.waitForSelector(passwordSelector);
-    await page.type(passwordSelector, 'Salih131928'); // Şifrenizi buraya girin
+    await page.type(passwordSelector, 'serpil38'); // Şifrenizi buraya girin
     await page.click('#passwordNext');
     await new Promise(resolve => setTimeout(resolve, 10000));
 
@@ -72,8 +71,12 @@ async function loginToGoogle(page) {
   const browser = await puppeteer.launch({
     headless: false, // Tarayıcıyı görsel olarak görmek için false yapın
     userDataDir, // Verilerin kaydedileceği dizin
-    args: ['--start-maximized'] // Tarayıcıyı tam ekran başlat
-  });
+    args: ['--start-maximized',
+           '--no-sandbox',  // Bu satırı ekleyin
+           '--disable-setuid-sandbox'
+    ]
+     // Tarayıcıyı tam ekran başlat
+  }); 
 
   const page = await browser.newPage();
   
@@ -84,7 +87,7 @@ async function loginToGoogle(page) {
   }
 
   // Tarayıcıyı kapatmadan önce bekleyin
-  // await new Promise(resolve => setTimeout(resolve, 5000));
-
-  // await browser.close();
+ 
+   await new Promise(resolve => setTimeout(resolve, 5000));
+    await browser.close();
 })();
